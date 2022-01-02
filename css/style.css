@@ -1,3 +1,14 @@
+.button {
+  display: block;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.button.shadow {
+  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+}
+
 /* --- Spectre overrides --- */
 a:visited {
   color: none;
@@ -52,8 +63,23 @@ ul {
           box-sizing: border-box;
 }
 
+body {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+}
+
 a {
   cursor: pointer;
+}
+
+.mb-3 {
+  margin-bottom: 1rem !important;
 }
 
 @media screen and (max-width: 600px) {
@@ -75,7 +101,7 @@ h2 {
 
 @media screen and (max-width: 600px) {
   p {
-    font-size: 15px;
+    font-size: 18px;
   }
 }
 
@@ -460,6 +486,7 @@ h2 {
   background-color: #e2e2e2;
   background-image: url(../images/hero.jpg);
   background-position-x: center;
+  background-size: cover;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -511,30 +538,24 @@ h2 {
 }
 
 #hero h1 {
-  font-size: 46px;
+  font-size: 50px;
   font-weight: 700;
+  letter-spacing: -1.3px;
 }
 
 #hero p {
   margin-bottom: 35px;
 }
 
-@media screen and (max-width: 600px) {
-  #hero p {
-    font-size: 15px;
-  }
-}
-
 #hero a {
   display: inline-block;
-  font-weight: 500;
-  border-radius: 6px;
-  padding: 12px 30px;
-  font-size: 15px;
+  padding: 15px 40px;
+  font-size: 16px;
   background: #8ac43f;
   color: white;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  text-transform: uppercase;
 }
 
 #hero a:hover {
@@ -601,8 +622,8 @@ h2 {
 }
 
 #core-values h3 {
-  font-size: 18px;
-  margin: 10px 0 0 0;
+  font-size: 24px;
+  margin: 20px 0 0 0;
 }
 
 @media screen and (max-width: 840px) {
@@ -611,26 +632,20 @@ h2 {
   }
 }
 
-@media screen and (max-width: 840px) and (max-width: 600px) {
-  #core-values h3 {
-    font-size: 18px;
-  }
-}
-
 #core-values p {
-  margin: 10px auto;
+  margin: 20px auto;
   line-height: 1.4;
 }
 
 @media screen and (max-width: 600px) {
   #core-values p {
-    font-size: 13px;
+    margin: 10px auto 20px;
   }
 }
 
 #core-values .core-values-pod.column.col-3 {
   text-align: center;
-  padding: 0 25px;
+  padding: 0 32x;
 }
 
 @media screen and (max-width: 600px) {
@@ -654,52 +669,71 @@ h2 {
   background-color: white;
 }
 
-#services .service {
-  text-align: center;
-  height: 420px;
-  border: 1px solid #e4e4e4;
-  border-radius: 4px;
-  overflow: hidden;
-  margin-bottom: 30px;
-  -webkit-box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+#services .service-column {
+  margin-bottom: 40px;
 }
 
 @media screen and (max-width: 600px) {
-  #services .service {
-    height: 380px;
+  #services .service-column {
+    margin-bottom: 30px;
+  }
+  #services .service-column:last-child {
+    margin-bottom: 0;
   }
 }
 
-#services .service:hover {
+#services .service-column .service {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  position: relative;
+  height: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  margin: 0 10px;
+}
+
+@media screen and (max-width: 600px) {
+  #services .service-column .service {
+    margin: 0;
+  }
+}
+
+#services .service-column .service:hover {
   -webkit-box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-#services .service.homecare .service-img {
+#services .service-column .service.homecare .service-img {
   background-image: url("../images/services-pod-homecare.jpg");
 }
 
-#services .service.supporting-carers .service-img {
+#services .service-column .service.supporting-carers .service-img {
   background-image: url("../images/services-pod-supporting-carers.jpg");
 }
 
-#services .service.supported-living .service-img {
+#services .service-column .service.supported-living .service-img {
   background-image: url("../images/services-pod-supported-living.jpg");
 }
 
-#services .service.carehome .service-img {
+#services .service-column .service.carehome .service-img {
   background-image: url("../images/services-pod-carehome.jpg");
 }
 
-#services .service.hoarding .service-img {
+#services .service-column .service.hoarding .service-img {
   background-image: url("../images/services-pod-mental-health.jpg");
 }
 
-#services .service .service-img {
+#services .service-column .service .service-img {
   background-color: #e2e2e2;
   width: 100%;
   height: 250px;
@@ -708,36 +742,61 @@ h2 {
 }
 
 @media screen and (max-width: 600px) {
-  #services .service .service-img {
-    height: 220px;
+  #services .service-column .service .service-img {
+    height: 200px;
   }
 }
 
-#services .service h3 {
+#services .service-column .service .service-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 40px 30px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+@media screen and (max-width: 600px) {
+  #services .service-column .service .service-text {
+    padding: 30px 15px;
+  }
+}
+
+#services .service-column .service .service-text h3 {
+  font-size: 24px;
+}
+
+@media screen and (max-width: 600px) {
+  #services .service-column .service .service-text h3 {
+    font-size: 22px;
+  }
+}
+
+#services .service-column .service .service-text p {
   font-size: 18px;
-  margin-top: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
-#services .service p {
-  padding: 0 10px;
-}
-
-#services .service a {
-  border-radius: 6px;
-  padding: 8px 20px;
+#services .service-column .service .service-text a {
+  padding: 10px 30px;
   font-size: 15px;
   background: #8ac43f;
   color: white;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  text-transform: uppercase;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#services .service a:hover {
+#services .service-column .service .service-text a:hover {
   background: #78a938;
 }
 
@@ -804,7 +863,7 @@ h2 {
 }
 
 #testimonials .quote {
-  padding: 20px 30px;
+  padding: 30px;
   height: auto;
   text-align: center;
   background: white;
@@ -831,7 +890,7 @@ h2 {
 
 @media screen and (max-width: 600px) {
   #testimonials .quote {
-    padding: 20px 35px;
+    padding: 30px 35px;
   }
 }
 
@@ -908,34 +967,43 @@ h2 {
 
 #contact-us #contact-icons-container #contact-icons-section p {
   margin: 0;
-}
-
-#contact-us #contact-icons-container #contact-icons-section .contact-feature {
-  border: 1px solid #8ac43f;
-  padding: 10px;
-  border-radius: 3px;
-  height: 105px;
+  font-size: 18px;
 }
 
 @media screen and (max-width: 840px) {
-  #contact-us #contact-icons-container #contact-icons-section .contact-feature {
+  #contact-us #contact-icons-container #contact-icons-section .contact-feature-column {
     margin-bottom: 20px;
   }
 }
 
-#contact-us #contact-icons-container #contact-icons-section .contact-feature a {
+#contact-us #contact-icons-container #contact-icons-section .contact-feature-column .contact-feature {
+  padding: 30px;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 100%;
+  border: 1px solid #8ac43f;
+}
+
+#contact-us #contact-icons-container #contact-icons-section .contact-feature-column .contact-feature a {
   color: #50596c;
+  font-size: 18px;
 }
 
-#contact-us #contact-icons-container #contact-icons-section .contact-feature i.fa {
+#contact-us #contact-icons-container #contact-icons-section .contact-feature-column .contact-feature i.fa {
   color: #8ac43f;
-  font-size: 16px;
-  margin-bottom: 10px;
-  margin-top: 17px;
-}
-
-#contact-us #contact-icons-container #contact-icons-section .contact-feature.double-line i.fa {
-  margin-top: 0;
+  font-size: 50px;
+  margin-bottom: 20px;
+  height: 50px;
+  padding: 0px;
 }
 
 #contact-us #social-icon-fb {
