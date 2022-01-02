@@ -1,0 +1,31 @@
+V1.0 - Initial release
+V1.1 - Testimonial added
+V1.2 - Transition on load fix
+V1.3 - Added GA tracking
+V1.4 - Remove care home from services
+     - Re-order services
+     - Add Facebook link
+V1.5 - Hero image changed
+V1.6 - Hero image changed
+V1.7 - 'We' changed to 'I'
+V1.8 - Amazon adverts added
+
+V1.9 - CSS to SCSS
+	- About image changed
+	- Remove amazon ads
+	- Contact - Add mobile
+	- Update 'I' wording to 'we'
+	- Replace 'Hoarding' with 'Mental Health Support'
+	- Insured by insurance logo update
+
+V1.91 - Mental health care content added
+      - OG image added
+      - Testimonial updated
+
+
+V1.92 - Testimonials
+	  - Email address update
+	  - Hero style more bold
+	  - Buttons rounded more
+	
+	
